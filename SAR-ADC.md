@@ -10,5 +10,5 @@ The main fundamental building blocks of a SAR-ADC are :
 ![Untitled design](https://github.com/user-attachments/assets/8c9f3bce-6127-4628-af94-13b20ed0af2f)
 
 
-
-The Capacitaor network serves as both S/H circuit and a reference DAC capacitor array.
+- The Capacitaor network serves as both S/H circuit and a reference DAC capacitor array.   
+- The ADC is fully differential, the operation of the two sides is complimentory.  
