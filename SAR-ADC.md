@@ -16,7 +16,7 @@ The main fundamental building blocks of a SAR-ADC are :
 - Each array has:   
    - Binary weighted capacitors
          **Ci​=2Ci+1**
-   - So : C1 = 128C
+   - So :
      
     | Capacitor  | Weight  | Capacitance  |
     |------------|---------|--------------|
@@ -29,9 +29,8 @@ The main fundamental building blocks of a SAR-ADC are :
     | C₃         | 4C      |              |
     | C₂         | 2C      |              |
     | C₁         | 1C      |  LSB         |
-    |------------|---------|--------------|
     | Total      | 256C                   |
-    |-------------------------------------|​
+    ​
 -----
 ## Individual Block :
 
