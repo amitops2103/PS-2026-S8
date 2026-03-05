@@ -32,8 +32,20 @@ $$
   | C₂         | 2C      |              |
   | C₁         | 1C      |  LSB         |
 
-   Total = 256C                   
-    ​
+   Total = 256C 
+
+   
+   - An extra capacitor:
+   
+$$
+C_9 = C_8
+$$
+
+(dummy / matching capacitor)
+
+   - A fully differential comparator
+   - SAR logic controlling switches S1p…S8p and S1n…S8n
+​
 -----
 ## Individual Block :
 
@@ -57,4 +69,21 @@ $$
 
 $$
 Q_{initial} = C(V_{cm} - V_{in})
+$$
+
+Each side stores equal charge.
+  - Since it's differential:
+
+$$
+V_{d} = V_{ip} - V_{in}
+$$
+
+  - If input is:
+
+$$
+V_{ip} = V_{cm} + \frac{V_{diff}}{2}
+$$
+
+$$
+V_{in} = V_{cm} - \frac{V_{diff}}{2}
 $$
