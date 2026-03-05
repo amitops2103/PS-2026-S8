@@ -29,7 +29,8 @@ The main fundamental building blocks of a SAR-ADC are :
     | C₃         | 4C      |              |
     | C₂         | 2C      |              |
     | C₁         | 1C      |  LSB         |
-    | Total      | 256C                   |
+
+   Total = 256C                   
     ​
 -----
 ## Individual Block :
