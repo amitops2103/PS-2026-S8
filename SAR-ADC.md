@@ -7,7 +7,8 @@ The main fundamental building blocks of a SAR-ADC are :
         |___ **3. Comparator**     
         |___ **4. SAR logic (Successive Aproximation register)**     
 
-<img width="1623" height="640" alt="generated_8bitsar" src="https://github.com/user-attachments/assets/1ccb39b2-68cc-4a22-8b87-796102db03d7" />
+![Untitled design](https://github.com/user-attachments/assets/8c9f3bce-6127-4628-af94-13b20ed0af2f)
+
 
 
 The Capacitaor network serves as both S/H circuit and a reference DAC capacitor array.
