@@ -19,20 +19,18 @@ The main fundamental building blocks of a SAR-ADC are :
 $$
 C_i = 2C_{i+1}
 $$
-
-   - So :
      
-    | Capacitor  | Weight  | Capacitance  |
-    |------------|---------|--------------|
-    | C₉ = C₈    | 128C    |  MSB (split) |
-    | C₈         | 128C    |              |
-    | C₇         | 64C     |              |
-    | C₆         | 32C     |              |
-    | C₅         | 16C     |              |
-    | C₄         | 8C      |              |
-    | C₃         | 4C      |              |
-    | C₂         | 2C      |              |
-    | C₁         | 1C      |  LSB         |
+  | Capacitor  | Weight  | Capacitance  |
+  |------------|---------|--------------|
+  | C₉ = C₈    | 128C    |              |
+  | C₈         | 128C    |  MSB (split) |
+  | C₇         | 64C     |              |
+  | C₆         | 32C     |              |
+  | C₅         | 16C     |              |
+  | C₄         | 8C      |              |
+  | C₃         | 4C      |              |
+  | C₂         | 2C      |              |
+  | C₁         | 1C      |  LSB         |
 
    Total = 256C                   
     ​
@@ -46,7 +44,17 @@ $$
 - The Capacitor network serves as both S/H circuit and a reference DAC capacitor array. 
 
 - Phase 1 : Sampling phase
-  - Top array bottom plates -> Vin
+  - Top array bottom plates -> Vip
   - Bottom array bottom plates -> Vin
   - Top plates -> Vcm
+  - So both arrays sample the input.
 
+  - The voltage stored on capacitors :
+    
+$$
+Q_{initial} = C(V_{cm} - V_{ip})
+$$
+
+$$
+Q_{initial} = C(V_{cm} - V_{in})
+$$
