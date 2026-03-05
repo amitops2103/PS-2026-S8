@@ -14,7 +14,7 @@ The main fundamental building blocks of a SAR-ADC are :
    - Bottom array -> connected to comparator negative (–)
      
 - Each array has:   
-   - Binary weighted capacitors
+   - Binary weighted capacitors       
          **Ci​=2Ci+1**
    - So :
      
@@ -38,4 +38,5 @@ The main fundamental building blocks of a SAR-ADC are :
 ### **1. Capacitor DAC**
 
    <img width="1021" height="580" alt="image" src="https://github.com/user-attachments/assets/cc039a85-4fa5-4a51-a109-b76faa38e8ba" />
+
 - The Capacitaor network serves as both S/H circuit and a reference DAC capacitor array. 
