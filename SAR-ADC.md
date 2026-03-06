@@ -55,7 +55,7 @@ $$
 
 - The Capacitor network serves as both S/H circuit and a reference DAC capacitor array. 
 
-- Phase 1 : Sampling phase
+- **Phase 1 : Sampling phase**
   - Top array bottom plates -> Vip
   - Bottom array bottom plates -> Vin
   - Top plates -> Vcm
@@ -87,3 +87,8 @@ $$
 $$
 V_{in} = V_{cm} - \frac{V_{diff}}{2}
 $$
+
+- **Phase 2 — Conversion Phase :**
+  - Input is disconnected.
+  - Top node becomes floating.
+  - Total charge must remain constant.
