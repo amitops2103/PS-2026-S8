@@ -1,3 +1,8 @@
+# **1-TOPS** proposed architecture   
+
+<img width="641" height="473" alt="image" src="https://github.com/user-attachments/assets/5beb36e6-c54a-464f-b28a-0277047e891b" />
+
+--------
 
 # 8 BIT SAR-ADC
 ------
