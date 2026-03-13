@@ -81,24 +81,22 @@ $$
 
 ### **1. Capacitor DAC**
 
-   <img width="1021" height="580" alt="image" src="https://github.com/user-attachments/assets/cc039a85-4fa5-4a51-a109-b76faa38e8ba" />
-
 - The Capacitor network serves as both S/H circuit and a reference DAC capacitor array. 
 
 - **Phase 1 : Sampling phase**
-  - Top array bottom plates -> Vip
-  - Bottom array bottom plates -> Vin
-  - Top plates -> Vcm
+  - Top array top plates -> Vip
+  - Bottom array top plates -> Vin
+  - Bottom plates -> Vcm
   - So both arrays sample the input.
 
   - The voltage stored on capacitors :
     
 $$
-Q_{initial} = C(V_{cm} - V_{ip})
+Q_{initial} = C(V_{ip} - V_{reff})
 $$
 
 $$
-Q_{initial} = C(V_{cm} - V_{in})
+Q_{initial} = C(V_{in} - V_{reff})
 $$
 
 Each side stores equal charge.
@@ -108,15 +106,6 @@ $$
 V_{d} = V_{ip} - V_{in}
 $$
 
-  - If input is:
-
-$$
-V_{ip} = V_{cm} + \frac{V_{diff}}{2}
-$$
-
-$$
-V_{in} = V_{cm} - \frac{V_{diff}}{2}
-$$
 
 - **Phase 2 — Conversion Phase :**
   - Input is disconnected.
