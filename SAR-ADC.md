@@ -32,7 +32,35 @@ The main fundamental building blocks of a SAR-ADC are :
    6. **Binary Search Process** : This process continues bit-by-bit from MSB to LSB, each time refining the approximation.
    7. **Final Digital Output** : After N clock cycles for an N-bit ADC, the SAR register contains the final digital representation of ***Vin***.
 
+- **Conventional Switching Architecture**
+  - no. of unit cap -> 2^N -> 256
+  - Total cap -> 2N + 2 -> 18
+  - Total switches -> 4N+10 -> 42
+  - Large switchingg energy : Large capacitors causes large energy consumption.
+    - The average switching energy for 8 bit ≈ 339.34 CV²_ref
 
+$$E_{avg,conv} = \sum_{i=1}^{n} 2^{n+1-2i}(2^i - 1)CV_{ref}^2$$
+
+  - Bidirectionl switching
+    - Vreff -> GND
+    - GND -> Vreff
+  - High switch counts : Each cap needs switches for three state : Vin, Vreff, GND
+
+
+- **Monotonic Switching Architecture**
+  - no. of unit cap -> 2^(N-1) -> 128
+  - Total cap -> 2N -> 16
+  - Total switches -> 4N -> 32
+  - Less switching energy : average switching energy for 8 bit ≈ 63.5 CV²_ref
+
+$$E_{avg,mono} = \sum_{i=1}^{n-1} 2^{n-2-i} CV_{ref}^2$$
+
+  - Unidirectional switching : Vreff -> GND
+  - Each cap needs switvhes for two state : Vreff, GND
+
+---------------------
+
+## Monotonic Switching Architecture
 
 - Two identical capacitor arrays  
    - Top array -> connected to comparator positive (+)  
@@ -44,29 +72,7 @@ The main fundamental building blocks of a SAR-ADC are :
 $$
 C_i = 2C_{i+1}
 $$
-     
-  | Capacitor  | Weight  | Capacitance  |
-  |------------|---------|--------------|
-  | C₉ = C₈    | 128C    |              |
-  | C₈         | 128C    |  MSB (split) |
-  | C₇         | 64C     |              |
-  | C₆         | 32C     |              |
-  | C₅         | 16C     |              |
-  | C₄         | 8C      |              |
-  | C₃         | 4C      |              |
-  | C₂         | 2C      |              |
-  | C₁         | 1C      |  LSB         |
 
-   Total = 256C 
-
-   
-   - An extra capacitor:
-   
-$$
-C_9 = C_8
-$$
-
-(dummy / matching capacitor)
 
    - A fully differential comparator
    - SAR logic controlling switches S1p…S8p and S1n…S8n
