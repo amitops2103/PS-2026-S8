@@ -65,9 +65,8 @@ $$E_{avg,mono} = \sum_{i=1}^{n-1} 2^{n-2-i} CV_{ref}^2$$
 - Two identical capacitor arrays  
    - Top array -> connected to comparator positive (+)  
    - Bottom array -> connected to comparator negative (–)
-     
-- Each array has:   
-   - Binary weighted capacitors :       
+   - Each array has:
+     - Binary weighted capacitors :       
 
 $$
 C_i = 2C_{i+1}
