@@ -120,7 +120,7 @@ $$
   - The common-mode voltage of the DAC gradually decreases from ***V_ref/2*** to GND.
   - This continues until the LSB is resolved.
 - **Problem**
-  - As the input common-mode voltage gradually decreases from ***Vref/2** toward ground during conversion (unlike the conventional method where it stays roughly constant), the effective gate overdrive voltage **(V_GS - V_TH)** of the comparator's input differential pair changes continuously. This causes a input-dependent dynamic offset that degraded linearity in the first prototype.
+  - As the input common-mode voltage gradually decreases from ***Vref/2*** toward ground during conversion (unlike the conventional method where it stays roughly constant), the effective gate overdrive voltage **(V_GS - V_TH)** of the comparator's input differential pair changes continuously. This causes a input-dependent dynamic offset that degraded linearity in the first prototype.
 
 - **Solution: Improved Comparator with Current Source (Mb)**
   - A biased MOS transistor Mb is cascoded at the top of the switch transistor in the dynamic comparator. Since Mb operates in saturation, changes in its drain-source voltage have only a minor effect on drain current. This keeps the effective overdrive voltage of the input pair nearly constant even as the common-mode voltage varies, suppressing the dynamic offset.
@@ -132,6 +132,23 @@ Given:
 - **VDD = 1.8V**
 - **Vref = 1.2V**
 - **Vcm = Vref/2 = 0.6V**
-- **Resolution = 4-bit → 2⁴ = 16 levels**
+- **Resolution = 4-bit -> 2⁴ = 16 levels**
 - **LSB = V_ref / 2^N = 1.2 / 16 = 0.075V**
   
+Capacitor Array (4-bit) : number of unit capacitors = 2^(N-1) = 2³ = 8      
+ 
+    C1 = 8C  (MSB capacitor)
+    C2 = 4C
+    C3 = 2C
+    C4 = C   (LSB capacitor)
+
+- Differential Input (example we will trace):
+  - V_ip = 0.85V (positive input)
+  - V_in = 0.35V (negative input)
+  - Differential input = 0.85 - 0.35 = 0.50V
+  - 
+
+- **PHASE 0 — SAMPLING PHASE**
+  - Transmission switches ON.
+  - Input voltages ***Vip*** and ***Vin*** are sampled onto the top plates.
+  - Bottom plates of ALL capacitors on both sides are connected to ***Vref = 1.2V***
