@@ -83,10 +83,9 @@ $$
 
 - The Capacitor network serves as both S/H circuit and a reference DAC capacitor array. 
 
-- **Phase 1 : Sampling phase**
-  - Top array top plates -> Vip
-  - Bottom array top plates -> Vin
-  - Bottom plates -> Vcm
+- **Phase 1 - Sampling phase**
+  - Input signals ***Vip*** and ***Vin*** are sampled onto the top plates of capacitors via transmission gate switches switches
+  - Bottom plates -> ***Vreff***
   - So both arrays sample the input.
 
   - The voltage stored on capacitors :
@@ -107,7 +106,16 @@ V_{d} = V_{ip} - V_{in}
 $$
 
 
-- **Phase 2 — Conversion Phase :**
-  - Input is disconnected.
-  - Top node becomes floating.
-  - Total charge must remain constant.
+- **Phase 2 - Conversion Phase : First Comparison (No Switching!)**
+  - After the switches turn off, the comparator immediately performs the first comparison without switching any capacitor.
+  - Zero switching energy is consumed before the first comparison.
+
+- **Phase 3 - MSB Decision**
+  - The comparator output determines which side has the higher voltage ***Vip - Vin***.
+  - The largest capacitor on the higher-voltage side is switched from ***V_ref*** down to ground.
+  - The capacitor on the lower-voltage side remains unchanged at ***V_ref***.
+    
+- **Phase 4 - Subsequent Bit Decisions**
+  - For each bit cycle, only one capacitor switch occurs - always downward.
+  - The common-mode voltage of the DAC gradually decreases from ***V_ref/2*** to GND.
+  - 
