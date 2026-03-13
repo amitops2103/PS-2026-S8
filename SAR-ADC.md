@@ -118,4 +118,20 @@ $$
 - **Phase 4 - Subsequent Bit Decisions**
   - For each bit cycle, only one capacitor switch occurs - always downward.
   - The common-mode voltage of the DAC gradually decreases from ***V_ref/2*** to GND.
-  - 
+  - This continues until the LSB is resolved.
+- **Problem**
+  - As the input common-mode voltage gradually decreases from ***Vref/2** toward ground during conversion (unlike the conventional method where it stays roughly constant), the effective gate overdrive voltage **(V_GS - V_TH)** of the comparator's input differential pair changes continuously. This causes a input-dependent dynamic offset that degraded linearity in the first prototype.
+
+- **Solution: Improved Comparator with Current Source (Mb)**
+  - A biased MOS transistor Mb is cascoded at the top of the switch transistor in the dynamic comparator. Since Mb operates in saturation, changes in its drain-source voltage have only a minor effect on drain current. This keeps the effective overdrive voltage of the input pair nearly constant even as the common-mode voltage varies, suppressing the dynamic offset.
+    
+------------
+
+**Complete Working of 4-bit Monotonic SAR ADC**
+Given:  
+- **VDD = 1.8V**
+- **Vref = 1.2V**
+- **Vcm = Vref/2 = 0.6V**
+- **Resolution = 4-bit → 2⁴ = 16 levels**
+- **LSB = V_ref / 2^N = 1.2 / 16 = 0.075V**
+  
