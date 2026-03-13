@@ -4,13 +4,15 @@
 
 --------
 
-# 8 BIT SAR-ADC
+# 8 BIT SAR-ADC (**ADC Analog Peripheral**)
 ------
 The main fundamental building blocks of a SAR-ADC are :         
 **1. Sample & Hold circuit**      
 **2. DAC**     
 **3. Comparator**     
-**4. SAR logic (Successive Aproximation register)**     
+**4. SAR logic (Successive Aproximation register)**   
+
+
 
 ![Untitled design](https://github.com/user-attachments/assets/8c9f3bce-6127-4628-af94-13b20ed0af2f)
 
