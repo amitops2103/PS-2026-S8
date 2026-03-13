@@ -152,3 +152,41 @@ Capacitor Array (4-bit) : number of unit capacitors = 2^(N-1) = 2³ = 8
   - Transmission switches ON.
   - Input voltages ***Vip*** and ***Vin*** are sampled onto the top plates.
   - Bottom plates of ALL capacitors on both sides are connected to ***Vref = 1.2V***
+
+
+
+        POSITIVE SIDE:
+        Top plates    = V_ip = 0.85V  (sampled input)
+        Bottom plates = V_ref = 1.2V  (all reset to Vref)
+
+        Voltage across each capacitor (V_top - V_bottom):
+        C1p: 0.85 - 1.2 = -0.35V
+        C2p: 0.85 - 1.2 = -0.35V
+        C3p: 0.85 - 1.2 = -0.35V
+        C4p: 0.85 - 1.2 = -0.35V
+
+        NEGATIVE SIDE:
+        Top plates    = V_in = 0.35V  (sampled input)
+        Bottom plates = V_ref = 1.2V  (all reset to Vref)
+
+        Voltage across each capacitor:
+        C1n: 0.35 - 1.2 = -0.85V
+        C2n: 0.35 - 1.2 = -0.85V
+        C3n: 0.35 - 1.2 = -0.85V
+        C4n: 0.35 - 1.2 = -0.85V
+
+        Charge on top plate of positive side (total):
+        Qp = (8C+4C+2C+C) x (0.85 - 1.2)
+           = 15C x (-0.35)
+           = -5.25C
+
+        Charge on top plate of negative side (total):
+        Q_n = 15C x (0.35 - 1.2)
+            = 15C x (-0.85)
+            = -12.75C
+
+- **PHASE 1 — END OF SAMPLING (Transmission Switch Turns OFF)**
+  - Bootstrapped switches turn OFF. 
+  - Top plate charges are now frozen (charge conservation).
+  - Bottom plates still at ***Vref = 1.2V***.
+  - Comparator is ready for first comparison
