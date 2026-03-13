@@ -15,12 +15,11 @@ The main fundamental building blocks of a SAR-ADC are :
 **3. Comparator**     
 **4. SAR logic (Successive Aproximation register)**   
 
+*P-1 : Conventional Architecture* 
+
 ![Untitled design](https://github.com/user-attachments/assets/8c9f3bce-6127-4628-af94-13b20ed0af2f)
 
-Conventional Architecture
-
-p-1    
-Monotonic Switching Architecture
+*p-2 : Monotonic Switching Architecture*
 
 - Brief Working of SAR ADC    
    1. The Capacitor network serves as both S/H circuit and a reference DAC capacitor array.      
@@ -31,8 +30,7 @@ Monotonic Switching Architecture
       - If ***Vin > Vdac*** -> keep that bit as 1.    
       - If ***Vin < Vdac*** -> keep that bit as 0.     
    6. **Binary Search Process** : This process continues bit-by-bit from MSB to LSB, each time refining the approximation.
-   7. Final Digital Output
-After N clock cycles for an N-bit ADC, the SAR register contains the final digital representation of ***Vin***.
+   7. **Final Digital Output** : After N clock cycles for an N-bit ADC, the SAR register contains the final digital representation of ***Vin***.
 
 
 
