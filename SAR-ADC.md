@@ -6,15 +6,35 @@
 
 # 8 BIT SAR-ADC (**ADC Analog Peripheral**)
 ------
+
+A Successive Approximation Register Analog-to-Digital Converter (SAR ADC) is a type of ADC architecture that converts an analog input signal into a digital output through a binary search process. It offers a balance of speed, accuracy, and power efficiency, making it widely used in mixed-signal and embedded systems.    
+
 The main fundamental building blocks of a SAR-ADC are :         
 **1. Sample & Hold circuit**      
 **2. DAC**     
 **3. Comparator**     
 **4. SAR logic (Successive Aproximation register)**   
 
-
-
 ![Untitled design](https://github.com/user-attachments/assets/8c9f3bce-6127-4628-af94-13b20ed0af2f)
+
+Conventional Architecture
+
+p-1    
+Monotonic Switching Architecture
+
+- Brief Working of SAR ADC    
+   1. The Capacitor network serves as both S/H circuit and a reference DAC capacitor array.      
+   2. **Sampling the Input** : The analog input voltage is first sampled and held by a sample-and-hold circuit so it remains constant during the conversion process.    
+   3. **Initial Guess (MSB Test)** : The SAR logic sets the most significant bit (MSB) to 1 and all other bits to 0. This digital code is sent to the DAC.
+   4. **DAC Generates Comparison Voltage** : The Digital-to-Analog Converter converts this digital code into an analog voltage.
+   5. **Comparison** : A Analog Comparator compares ***Vin*** and ***Vdac***.  
+      - If ***Vin > Vdac*** -> keep that bit as 1.    
+      - If ***Vin < Vdac*** -> keep that bit as 0.     
+   6. **Binary Search Process** : This process continues bit-by-bit from MSB to LSB, each time refining the approximation.
+   7. Final Digital Output
+After N clock cycles for an N-bit ADC, the SAR register contains the final digital representation of ***Vin***.
+
+
 
 - Two identical capacitor arrays  
    - Top array -> connected to comparator positive (+)  
